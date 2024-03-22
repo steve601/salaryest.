@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            body{
+                background-image: url("{{url_for('static',filename = 'slary.PNG')}}");
+                background-repeat: no-repeat;
+                background-position: fixed;
+            }
+            h1{
+                text-align: center;
+                color: white;
+            }
+            .container{
+                width:38%;
+                margin: 0 auto;
+            }
+            h2{
+                text-align: center;
+            }
+            form{
+                background-color: Lavender;
+                width: 500px;
+                height: 325px;
+            }
+            .content{
+            padding-left: 153px;
+            }
+            .inp{
+                padding-bottom: 15px;
+            }
+            .inp label{
+                font-family: Apple Chancery, cursive;
+            }
+            .inp input{
+                height:20px;
+            }
+            .btn{
+                padding-left: 203px;
+            }
+            .btn button{
+                height:20px;
+                width:75px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>SALARY ESTIMATION WEB APP.</h1>
+        <div class="container">
+            <form action="/estimate" method='POST'>
+                <h2>Estimate...</h2>
+                <div class="content">
+                    <div class="inp">
+                        <label for="education_level">Education Level</label><br>
+                        <input type="text" name='education_level' list = 'edulist'>
+                        <datalist id='edulist'>
+                            <option value="Bachelor's">
+                            <option value="Master's">
+                            <option value="PhD">
+                        </datalist>
+                    </div>
+                    <div class="inp">
+                        <label for="job_title">Job Title</label><br>
+                        <select name='job_title' id='job_title'>
+                            <option value="Sales Manager">Sales Manager</option>
+                            <option value="Marketing Coordinator">Marketing Coordinator</option>
+                            <option value="Senior Scientist">Senior Scientist</option>
+                            <option value="Director of Marketing">Director of Marketing</option>
+                            <option value="Director of Operations">Director of Operations</option>
+                            <option value="Senior Data Scientist">Senior Data Scientist</option>
+                            <option value="Junior Accountant">Junior Accountant</option>
+                            <option value="Senior Financial Analyst">Senior Financial Analyst</option>
+                            <option value="Senior Software Engineer">Senior Software Engineer</option>
+                            <option value="Senior Project Manager">Senior Project Manager</option>
+                            <option value="Senior Marketing Manager">Senior Marketing Manager</option>
+                            <option value="Senior HR Manager">Senior HR Manager</option>
+                            <option value="Senior Project Coordinator">Senior Project Coordinator</option>
+                            <option value="Senior Marketing Analyst">Senior Marketing Analyst</option>
+                            <option value="Senior Business Analyst">Senior Business Analyst</option>
+                            <option value="Junior Marketing Analyst">Junior Marketing Analyst</option>
+                            <option value="Senior Product Manager">Senior Product Manager</option>
+                            <option value="Junior Operations Analyst">Junior Operations Analyst</option>
+                            <option value="Senior Software Developer">Senior Software Developer</option>
+                            <option value="Junior Sales Representative">Junior Sales Representative</option>
+                            <option value="Junior Marketing Manager">Junior Marketing Manager</option>
+                            <option value="Junior Business Analyst">Junior Business Analyst</option>
+                            <option value="Junior Marketing Specialist">Junior Marketing Specialist</option>
+                            <option value="Junior Project Manager">Junior Project Manager</option>
+                            <option value="Senior Business Development Manager">Senior Business Development Manager</option>
+                            <option value="Senior Product Designer">Senior Product Designer</option>
+                            <option value="Junior Financial Analyst">Junior Financial Analyst</option>
+                            <option value="Senior Operations Manager">Senior Operations Manager</option>
+                            <option value="Senior Marketing Coordinator">Senior Marketing Coordinator</option>
+                            <option value="Junior Business Development Associate">Junior Business Development Associate</option>
+                            <option value="Junior Marketing Coordinato">Junior Marketing Coordinato</option>
+                            <option value="Senior UX Designer">Senior UX Designer</option>
+                            <option value="Junior Product Manager">Junior Product Manager</option>
+                            <option value="Senior Marketing Specialist">Senior Marketing Specialist</option>
+                            <option value="Senior Data Analyst">Senior Data Analyst</option>
+                            <option value="Senior Financial Advisor">Senior Financial Advisor</option>
+                            <option value="Junior Operations Manager">Junior Operations Manager</option>
+                            <option value="Senior Financial Manager">Senior Financial Manager</option>
+                            <option value="Senior Data Engineer">Senior Data Engineer</option>
+                            <option value="Senior Operations Coordinator">Senior Operations Coordinator</option>
+                        </select>
+                    </div>
+                    <div class="inp">
+                        <label for="year_of_experience">Years Of Experience</label><br>
+                        <input type="text" name='year_of_experience'><br> 
+                    </div>
+                </div>
+                <br>
+                <div class="btn">   
+                     <button type='submit'>Estimate</button><br>
+                </div><br>
+                <h2>{{pred}}</h2>
+            </form>
+        </div>
+    </body>
+</html>
